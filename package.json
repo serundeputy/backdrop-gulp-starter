@@ -1,0 +1,23 @@
+{
+  "name": "common-media.drupal-scaffold",
+  "version": "1.0.0",
+  "description": "Bartik and Gulp ... live and work together ... profit.",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "find node_modules/ -name '*.info' -type f -delete"
+  },
+  "author": "CM",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.17.5",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-sass": "^2.3.2",
+    "gulp-shell": "^0.5.2"
+  },
+  "dependencies": {
+    "gulp-eslint": "^3.0.1",
+    "gulp-phpcs": "^1.3.0",
+    "gulp-phplint": "^0.3.2"
+  }
+}
