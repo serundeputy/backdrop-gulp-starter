@@ -2,6 +2,8 @@
 'use strict';
 
 var options = {
+  // path to your theme file
+  theme_path: 'themes/yourtheme',
   // Patterns for PHP files to lint and check.
   phpCheck: ['{modules,themes}/custom/**/*.{php,inc,module,theme,inc,install}'],
   // Patterns for JS files to lint and check.
