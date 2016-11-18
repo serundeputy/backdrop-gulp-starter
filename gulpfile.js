@@ -95,7 +95,7 @@ gulp.task('check:eslint', function () {
 });
 gulp.task('check:sasslint', function() {
   return gulp.src([config.theme_path + 'sass/*.scss', config.theme_path + 'sass/**/*.scss'])
-    .pipe(sassLint())
+    .pipe(sassLint({rules: config.sass_rules}))
     .pipe(sassLint.format())
     .pipe(sassLint.failOnError())
 });
