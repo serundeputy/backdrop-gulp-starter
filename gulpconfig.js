@@ -16,12 +16,18 @@ var options = {
     '!{modules,themes}/custom/**/dist/**'
   ],
   sass_rules: {
+    // Settings for sass-lint rules are stored here.
+    // If you're ever confused about what the linter means when it complains about something,
+    // the documentation for their rules can be found here: https://github.com/sasstools/sass-lint/tree/master/docs/rules
+    //
     // sass-lint doesn't like ids, but I still use them.
     // For their reasoning, see https://github.com/CSSLint/csslint/wiki/disallow-ids-in-selectors
     'no-ids': 0,
     // Sometimes, we just have to use a color once.
     // Having to define it as a variable first is redundant.
     'no-color-literals': 0,
+    'no-color-hex': 0,
+    'no-color-keywords': 1,
     // I like the concentric sort order, personally, though it might take some getting used to.
     'property-sort-order': [1, {order: 'concentric'}],
     // I'm disabling this one for now, but open to discussion.
@@ -46,7 +52,9 @@ var options = {
     // I agree it's good to have conventions, but not very useful to enforce them here.
     'class-name-format': 0,
     // Yes, important is terrible and should be avoided.  Unfortunately, sometimes we are forced to use it.
-    'no-important': 0
+    // The same goes for attribute selectors.
+    'no-important': 0,
+    'no-attribute-selectors': 0
   }
 };
 
