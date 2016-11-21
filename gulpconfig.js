@@ -48,6 +48,8 @@ var options = {
     'empty-line-between-blocks': 0,
     // Drupal coding convention says not to use quotes unless they are required, so no enforcing url quotes.
     'url-quotes': 0,
+    // Drupal coding convention says that when using quotes, use double quotation marks, not single
+    'quotes': [1, {'style': 'double'}],
     // Class names are declared in the markup, not the css.
     // I agree it's good to have conventions, but not very useful to enforce them here.
     'class-name-format': 0,
