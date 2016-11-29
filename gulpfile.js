@@ -15,6 +15,7 @@ var phpcs = require('gulp-phpcs');
 var eslint = require('gulp-eslint');
 var phplint = require('gulp-phplint');
 var sassLint = require('gulp-sass-lint');
+var sourcemaps = require('gulp-sourcemaps');
 
 // Load in configuration.  You don't have to use this,
 // but it makes it easier to update tasks in the future
@@ -28,10 +29,14 @@ var config = require('./gulpconfig');
 gulp.task('sass', function () {
   // This needs to be changed to point to the source styles.scss file for the project theme.
   return gulp.src(config.theme_path + '/sass/styles.scss')
-  // pass the file through gulp-sass
+    // initialize sourcemaps
+    .pipe(sourcemaps.init())
+    // pass the file through gulp-sass
     .pipe(sass())
     // pass the file through autoprefixer
     .pipe(prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], {cascade: true}))
+    // add css sourcemaps
+    .pipe(sourcemaps.write())
     // output .css file to css folder
     .pipe(gulp.dest(config.theme_path + '/css'));
 });
