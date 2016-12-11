@@ -46,7 +46,7 @@ gulp.task('sass', function () {
  * Clear all caches
  */
 gulp.task('clearcache', shell.task([
-  'drush cr'
+  'drush cc all'
 ]));
 
 /**
